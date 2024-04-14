@@ -17,8 +17,10 @@ import { UpdateClientDto } from './dto/update-client.dto';
 import { Client } from './entities/client.entity';
 import { Pagination } from 'nestjs-typeorm-paginate';
 import { JwtRoleGuard } from 'src/auth/jwt.role.guard';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('clients')
+@ApiTags('clients')
 export class ClientsController {
   constructor(private readonly clientsService: ClientsService) {}
 

@@ -17,8 +17,10 @@ import { UpdateCompanyDto } from './dto/update-company.dto';
 import { Company } from './entities/company.entity';
 import { Pagination } from 'nestjs-typeorm-paginate';
 import { JwtRoleGuard } from 'src/auth/jwt.role.guard';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('companies')
+@ApiTags('companies')
 export class CompaniesController {
   constructor(private readonly companiesService: CompaniesService) {}
 
