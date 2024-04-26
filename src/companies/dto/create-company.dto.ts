@@ -10,37 +10,37 @@ import {
 export class CreateCompanyDto {
   @IsString()
   @IsNotEmpty()
-  readonly name;
+  readonly name: string;
 
   @IsUrl()
   @IsNotEmpty()
-  readonly website;
+  readonly website: string;
 
   @IsEmail()
   @IsNotEmpty()
-  readonly email;
+  readonly email: string;
 
   @IsNumber()
   @IsOptional()
-  readonly phone;
+  readonly phone: number;
 
   @IsString()
   @IsNotEmpty()
-  readonly address;
+  readonly address: string;
 
   @IsString()
   @IsNotEmpty()
-  readonly city;
+  readonly city: string;
 
   @IsString()
   @IsOptional()
-  readonly state;
+  readonly state: string;
 
   @IsString()
   @IsOptional()
-  readonly zip;
+  readonly zip: string;
 
   @IsString()
   @IsNotEmpty()
-  readonly country;
+  readonly country: string;
 }

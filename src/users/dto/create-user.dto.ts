@@ -11,15 +11,15 @@ import {
 export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
-  readonly firstName;
+  readonly firstName: string;
 
   @IsString()
   @IsNotEmpty()
-  readonly lastName;
+  readonly lastName: string;
 
   @IsEmail()
   @IsNotEmpty()
-  readonly email;
+  readonly email: string;
 
   @IsString()
   @IsNotEmpty()
@@ -30,5 +30,5 @@ export class CreateUserDto {
 
   @IsNumber()
   @IsNotEmpty()
-  readonly roleId;
+  readonly roleId: number;
 }

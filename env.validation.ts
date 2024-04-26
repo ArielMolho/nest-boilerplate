@@ -15,6 +15,8 @@ class EnvironmentVariables {
   PORT: number;
   @IsString()
   DB_HOST: string;
+  @IsNumber()
+  DB_PORT: number;
   @IsString()
   USERNAME: string;
   @IsString()
@@ -22,7 +24,7 @@ class EnvironmentVariables {
   @IsString()
   DB_NAME: string;
   @IsString()
-  SECRET: string;
+  JWT_SECRET: string;
 }
 export function validate(config: Record<string, unknown>) {
   const validatedConfig = plainToInstance(EnvironmentVariables, config, {

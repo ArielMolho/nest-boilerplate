@@ -23,7 +23,7 @@ import { RolesModule } from './roles/roles.module';
       load: [configuration],
       validate: validate,
     }),
-    TypeOrmModule.forRoot(typeOrmAsyncConfig),
+    TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
     ClientsModule,
     CompaniesModule,
     AuthModule,

@@ -9,41 +9,41 @@ import {
 export class CreateClientDto {
   @IsString()
   @IsNotEmpty()
-  readonly firstName;
+  readonly firstName: string;
 
   @IsString()
   @IsNotEmpty()
-  readonly lastName;
+  readonly lastName: string;
 
   @IsEmail()
   @IsNotEmpty()
-  readonly email;
+  readonly email: string;
 
   @IsNumber()
   @IsOptional()
-  readonly phone;
+  readonly phone: number;
 
   @IsString()
   @IsOptional()
-  readonly address;
+  readonly address: string;
 
   @IsString()
   @IsNotEmpty()
-  readonly city;
+  readonly city: string;
 
   @IsString()
   @IsOptional()
-  readonly state;
+  readonly state: string;
 
   @IsString()
   @IsOptional()
-  readonly zip;
+  readonly zip: string;
 
   @IsString()
   @IsNotEmpty()
-  readonly country;
+  readonly country: string;
 
   @IsNumber()
   @IsNotEmpty()
-  readonly companyId;
+  readonly companyId: number;
 }

@@ -12,7 +12,12 @@ import { LoginDTO } from './dto/login.dto';
 import { CreateUserDto } from 'src/users/dto/create-user.dto';
 import { User } from 'src/users/entities/user.entity';
 import { JwtRoleGuard } from './jwt.role.guard';
-import { ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 
 @Controller('auth')
 @ApiTags('auth')
@@ -22,6 +27,11 @@ export class AuthController {
     private authService: AuthService,
   ) {}
   @Post('register')
+  @ApiOperation({ summary: 'Register new user' })
+  @ApiResponse({
+    status: 201,
+    description: 'It will return the user in the response',
+  })
   signup(
     @Body()
     userDTO: CreateUserDto,
@@ -30,6 +40,11 @@ export class AuthController {
   }
 
   @Post('login')
+  @ApiOperation({ summary: 'Login user' })
+  @ApiResponse({
+    status: 200,
+    description: 'It will give you the access_token in the response',
+  })
   login(
     @Body()
     loginDTO: LoginDTO,
@@ -39,6 +54,12 @@ export class AuthController {
 
   @Delete(':id')
   @UseGuards(JwtRoleGuard)
+  @ApiBearerAuth('JWT-auth')
+  @ApiOperation({ summary: 'Delete an existing user' })
+  @ApiResponse({
+    status: 200,
+    description: 'It will return whether the operation was successful or not',
+  })
   remove(@Param('id') id: string) {
     return this.userService.remove(+id);
   }
